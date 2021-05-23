@@ -1,0 +1,46 @@
+[
+    {
+        "Key": "1613197755583",
+        "Record": {
+            "adharNo": "12456",
+            "age": "20",
+            "dob": "1245",
+            "email": "akole@yahoo.com",
+            "name": "nik",
+            "password": "abc",
+            "patientId": "1613197755583",
+            "phNo": "987654",
+            "type": "patient",
+            "userid": "nu"
+        }
+    }
+]
+
+
+
+[
+    {
+        "Key": "1613309483751",
+        "Record": {
+            "adharNo": "5467",
+            "age": "987654",
+            "dob": "12456",
+            "doctorId": "1613309483751",
+            "email": "akole123456@yahoo.com",
+            "licenseId": "nik",
+            "name": "20",
+            "password": "1245",
+            "type": "doctor",
+            "userid": "nu"
+        }
+    }
+]
+
+
+
+
+{
+    "email":"akolenikhil@yahoo.com",
+    "otp":"541003",
+    "hash":"582f8b7536fd529bea080a6df837354c4363be87e5be5287a4b2b667a18368e7.1613374567778"
+}
