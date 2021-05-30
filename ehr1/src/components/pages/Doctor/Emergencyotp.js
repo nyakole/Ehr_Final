@@ -10,6 +10,7 @@ export default function Logindoctor() {
   const [otp, setOtp] = useState("");
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
+  const [show3, setShow3] = useState(false);
   const time = new Date();
   time.setSeconds(time.getSeconds() + 300);
   let expiryTimestamp = time
@@ -29,7 +30,7 @@ export default function Logindoctor() {
       otp: otp,
       hash: hash
     };
-    const req =JSON.parse(sessionStorage.getItem('emmergency'))
+    const req = JSON.parse(sessionStorage.getItem('emmergency'))
     console.log(req)
     axios.post('http://localhost:8080/otpverification/verify', patotp)
       .then((response) => {
@@ -37,7 +38,7 @@ export default function Logindoctor() {
         console.log(userresponse);
         console.log(userresponse.data);
         if (userresponse.data === true) {
-            console.log("done")
+          console.log("done")
           axios.post('http://localhost:8080/emergency/verify', req)
             .then((response) => {
               let userresponse = response;
@@ -50,13 +51,17 @@ export default function Logindoctor() {
                 history.push('/doctorview')
               }
             })
-            .catch((error) => alert(error))
+            .catch((error) => {
+              setShow3(true)
+            })
         }
         else {
           setShow(true)
         }
       })
-      .catch((error) => alert(error))
+      .catch((error) => {
+        setShow3(true)
+      })
   }
 
   const resend = () => {
@@ -83,36 +88,63 @@ export default function Logindoctor() {
 
         }
       })
-      .catch((error) => alert(error))
+      .catch((error) => {
+        setShow3(true)
+      })
   }
 
 
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        {show ? (<Alert show={show} variant="danger" >
-          <Alert.Heading>Otp is invalid</Alert.Heading></Alert>) : null}
-        {show1 ? (<Alert show={show1} variant="success" >
-          <Alert.Heading>Otp resended Successfully</Alert.Heading></Alert>) : null}
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Enter otp</Form.Label>
-          <Form.Control
-            autoFocus
-            required
-            type="Number"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
-          />
-        </Form.Group>
+    <div className="col-sm back">
+      {show ? (<Alert show={show} variant="danger" >
+        <Alert.Heading>OTP is invalid</Alert.Heading></Alert>) : null}
+      {show1 ? (<Alert show={show1} variant="success" >
+        <Alert.Heading>OTP resended Successfully</Alert.Heading></Alert>) : null}
+        {show3 ? (<Alert show={show3} variant="danger" >
+        <Alert.Heading>Network Error</Alert.Heading></Alert>) : null}
 
-        <Button block size="lg" type="submit" >
-          verify Otp
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <center><h2>Verify OTP</h2></center>
+      <br></br>
+
+      <div className="center">
+        <Form onSubmit={handleSubmit}>
+
+
+          <br></br><div className="form6" >
+
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Enter OTP</Form.Label>
+              <Form.Control
+                autoFocus
+                required
+                type="Number"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+              />
+            </Form.Group>
+            <div style={{ fontSize: '25px', margin: "10px" }}>
+              <center>  <span>{minutes}</span>:<span>{seconds}</span></center>
+            </div>
+
+            <center>
+              <Button block size="lg" type="submit" >
+                Verify OTP
         </Button>
+            </center>
+          </div>
+        </Form>
 
-      </Form>
 
-      <div style={{ fontSize: '20px' }}>
-        <span>{minutes}</span>:<span>{seconds}</span>
+
       </div>
     </div>
   );

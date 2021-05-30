@@ -1,0 +1,19 @@
+.header h1{
+    font-size: 40px;
+  }
+
+.active{
+  background-color: #4caf50;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.colours12{
+  color: rgb(5, 1, 247);
+}
+
+
+

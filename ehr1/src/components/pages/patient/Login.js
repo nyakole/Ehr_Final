@@ -74,41 +74,61 @@ export default function Logindoctor() {
   };
 
   return (
-    <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        {show ? (<Alert show={show} variant="danger" >
-          <Alert.Heading>Check Email And Password </Alert.Heading></Alert>) : null}
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-            isInvalid={!!errors.email}
-          />
-          <Form.Control.Feedback type='invalid'>{errors.email}</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type={passwordShown ? 'text' : 'password'}
-            name="password"
-            value={values.password}
-            onChange={handleChange}
-            isInvalid={!!errors.password}
-          />
-          <Form.Control.Feedback type='invalid'>{errors?.password}</Form.Control.Feedback>
-          <i onClick={togglePasswordVisiblity}>{passwordShown ? eye : eye_slash}</i>
-        </Form.Group>
-        <Button block size="lg" type="submit" >
-          Login
+    <div className="col-sm back">
+      {show ? (<Alert show={show} variant="danger" >
+        <Alert.Heading>Check Email And Password </Alert.Heading></Alert>) : null}
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+      <center><h1> Patient Login </h1></center>
+
+
+      <br></br>
+      <br></br>
+      <div className="center">
+        <div className="form" >
+          <Form onSubmit={handleSubmit}>
+
+            <Form.Group size="lg" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                autoFocus
+                type="email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                isInvalid={!!errors.email}
+              />
+              <Form.Control.Feedback type='invalid'>{errors.email}</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group size="lg" controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type={passwordShown ? 'text' : 'password'}
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+                isInvalid={!!errors.password}
+              />
+              <Form.Control.Feedback type='invalid'>{errors?.password}</Form.Control.Feedback>
+              <i className="eye" onClick={togglePasswordVisiblity}>{passwordShown ? eye : eye_slash}</i>
+            </Form.Group>
+            <br></br>
+            <Button block size="lg" type="submit" >
+              Login
         </Button>
-        <p className="forgot-password text-right">
-          <a href='/emailreg'>Resgister patient</a>
-        </p>
-      </Form>
+            <p className="forgot-password text-right">
+              Not registered<a href='/emailreg'> Click here to Register patient</a>
+            </p>
+          </Form>
+        </div>
+      </div>
     </div>
   );
 }

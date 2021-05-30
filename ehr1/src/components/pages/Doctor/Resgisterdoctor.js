@@ -88,7 +88,13 @@ function Resgisterdoctor() {
 
 
     return (
-        <div>
+        <div className="col-sm back1">
+            <br></br>
+            <center><h2>Registration Form For Doctor</h2></center>
+            <br></br>
+            <br></br>
+            <div className="center">
+            <div className="form5" >
             <Form onSubmit={handleSubmit}>
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
@@ -116,7 +122,7 @@ function Resgisterdoctor() {
 
 
                     <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Label>Email</Form.Label>
+                        <Form.Label>Email ID</Form.Label>
                         <Form.Control type="email" placeholder="Enter email"
                             autoFocus
                             name="email"
@@ -140,7 +146,7 @@ function Resgisterdoctor() {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>Enter Password</Form.Label>
                         <Form.Control
                             type={passwordShown ? 'text' : 'password'}
                             placeholder="Password"
@@ -150,12 +156,12 @@ function Resgisterdoctor() {
                             onChange={handleChange}
                             isInvalid={!!errors.password}
                         />
-                        <i onClick={togglePasswordVisiblity}>{passwordShown ? eye : eye_slash}</i>
+                        <i className="eye" onClick={togglePasswordVisiblity}>{passwordShown ? eye : eye_slash}</i>
                         <Form.Control.Feedback type='invalid'>{errors?.password}</Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridrePassword">
-                        <Form.Label>Conform Password</Form.Label>
+                        <Form.Label>Confirm Password</Form.Label>
                         <Form.Control
                             type={passwordShown1 ? 'text' : 'password'}
                             placeholder="Password"
@@ -165,7 +171,7 @@ function Resgisterdoctor() {
                             onChange={handleChange}
                             isInvalid={!!errors.confirmPassword}
                         />
-                        <i onClick={togglePasswordVisiblity1}>{passwordShown1 ? eye1 : eye_slash1}</i>
+                        <i className="eye" onClick={togglePasswordVisiblity1}>{passwordShown1 ? eye1 : eye_slash1}</i>
                         <Form.Control.Feedback type='invalid'>{errors?.confirmPassword}</Form.Control.Feedback>
                     </Form.Group>
                 </Form.Row>
@@ -185,7 +191,7 @@ function Resgisterdoctor() {
 
 
                 <Form.Group controlId="formGridAddress1">
-                    <Form.Label>Address</Form.Label>
+                    <Form.Label>Hospital Address</Form.Label>
                     <Form.Control placeholder="1234 Main St"
                         autoFocus
                         name="address"
@@ -201,7 +207,7 @@ function Resgisterdoctor() {
 
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGriddob">
-                        <Form.Label>Date of birth</Form.Label>
+                        <Form.Label>Date of Birth</Form.Label>
                         <Form.Control type="date"
                             autoFocus
                             name="dob"
@@ -225,7 +231,7 @@ function Resgisterdoctor() {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridadharNo">
-                        <Form.Label>AdharNo</Form.Label>
+                        <Form.Label>Adhar Card No.</Form.Label>
                         <Form.Control type="tel" placeholder="Enter adharNo"
                             autoFocus
                             name="adharNo"
@@ -263,7 +269,7 @@ function Resgisterdoctor() {
                 <Form.Group>
                     <Form.Check
                         required
-                        label="Agree to terms and conditions"
+                        label="By ticking, you're agreeing to our terms of service "
                         feedback="You must agree before submitting."
                     />
                 </Form.Group>
@@ -272,7 +278,9 @@ function Resgisterdoctor() {
                     Submit
   </Button>
             </Form>
-        </div>
+            </div>
+            </div>
+            </div>
     )
 }
 

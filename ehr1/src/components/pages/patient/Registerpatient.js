@@ -103,7 +103,13 @@ function Registerpatient() {
 
 
     return (
-        <div>
+        <div className="col-sm back1">
+            <br></br>
+            <center><h2>Registration Form For Patient</h2></center>
+            <br></br>
+            <br></br>
+            <div className="center">
+            <div className="form5" >
             <Form onSubmit={handleSubmit}>
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
@@ -131,7 +137,7 @@ function Registerpatient() {
 
 
                     <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Label>Email</Form.Label>
+                        <Form.Label>Email ID</Form.Label>
                         <Form.Control type="text" placeholder={email1}
                             readOnly
                             isInvalid={!!errors.email}
@@ -162,12 +168,12 @@ function Registerpatient() {
                             onChange={handleChange}
                             isInvalid={!!errors.password}
                         />
-                        <i onClick={togglePasswordVisiblity}>{passwordShown ? eye : eye_slash}</i>
+                        <i className="eye" onClick={togglePasswordVisiblity}>{passwordShown ? eye : eye_slash}</i>
                         <Form.Control.Feedback type='invalid'>{errors?.password}</Form.Control.Feedback>
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridrePassword">
-                        <Form.Label>Conform Password</Form.Label>
+                        <Form.Label>Confirm Password</Form.Label>
                         <Form.Control
                             type={passwordShown1 ? 'text' : 'password'}
                             placeholder="Password"
@@ -177,7 +183,7 @@ function Registerpatient() {
                             onChange={handleChange}
                             isInvalid={!!errors.confirmPassword}
                         />
-                        <i onClick={togglePasswordVisiblity1}>{passwordShown1 ? eye1 : eye_slash1}</i>
+                        <i className="eye" onClick={togglePasswordVisiblity1}>{passwordShown1 ? eye1 : eye_slash1}</i>
                         <Form.Control.Feedback type='invalid'>{errors?.confirmPassword}</Form.Control.Feedback>
                     </Form.Group>
                 </Form.Row>
@@ -223,7 +229,7 @@ function Registerpatient() {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridadharNo">
-                        <Form.Label>AdharNo</Form.Label>
+                        <Form.Label>Adhar Card No.</Form.Label>
                         <Form.Control type="tel" placeholder="Enter adharNo"
                             autoFocus
                             name="adharNo"
@@ -238,17 +244,19 @@ function Registerpatient() {
                 <Form.Group>
                     <Form.Check
                         required
-                        label="Agree to terms and conditions"
+                        label="By ticking, you're agreeing to our terms of service "
                         feedback="You must agree before submitting."
                     />
                 </Form.Group>
 
 
-
+                <br></br>
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
             </Form>
+            </div>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,81 @@
+.form {
+    background: #63f8e4;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.form1 {
+    background: #986fa8;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.form2 {
+    background: #e6b40f;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.form4 {
+    background: #6bcce4;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.form5 {
+    background: #b48eb1;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    margin-top: 1em;
+    color: rgb(255, 0, 0);
+}
+
+.fileupload{
+    padding: 10px;
+}
+.eye{
+    float: right;
+    margin-left: -25px;
+    margin-top: -30px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 3;
+    
+}
+.back{
+    background-image: url("../../home/ba.jpg");
+    background-blend-mode: darken;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-image: url("../../home/ba.jpg");
+  }
+
+  .back1{
+    background-color: rgb(255, 255, 255);
+    background-blend-mode: darken;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-image: url("../../home/ba.jpg");
+  }
+
+  .H3 {
+    color: white;
+     
+}

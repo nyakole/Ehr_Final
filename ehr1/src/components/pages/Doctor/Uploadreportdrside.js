@@ -51,35 +51,54 @@ function Uploadreportdrside() {
     }
 
     return (
-        <div>
-            <Button variant="danger" onClick={Logoutpatient}>Logoutpatient</Button>
-            <Button variant="danger" onClick={LogoutDoctor}>LogoutDoctor</Button>
+        <div className="back">
+            <div className="col-sm">
+                <Button variant="danger" style={{ float: "right", margin: '10px', marginRight: "30px" }} onClick={LogoutDoctor}>Logout Doctor</Button>
+                <Button variant="danger" style={{ float: "right", margin: '10px' }} onClick={Logoutpatient}>Logout Patient </Button>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h1 className="center" >Upload Medical Reports</h1>
 
-            <Form onSubmit={handleSubmit} >
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formGridName">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" placeholder="Enter description"
-                            autoFocus
-                            required
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                        />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.File id="exampleFormControlFile1" label="Example file input"
-                            autoFocus
-                            required
-                            accept="image/*,application/pdf"
-                            onChange={onchange}
-                        />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
+                <br></br>
+                <br></br>
+                <div className="center" >
+                    <div className="form4" >
+                        <Form onSubmit={handleSubmit} >
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="formGridName">
+                                    <Form.Label>Upload the medical report</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter description"
+                                        autoFocus
+                                        required
+                                        value={description}
+                                        onChange={(e) => setDescription(e.target.value)}
+                                    />
+                                </Form.Group>
+                                <br></br>
+                                <Form.Group>
+                                    <Form.File id="exampleFormControlFile1"
+                                        autoFocus
+                                        required
+                                        accept="image/*,application/pdf"
+                                        onChange={onchange}
+                                    />
+                                </Form.Group>
+                                <br></br>
+                                <Button variant="primary" type="submit">
+                                    Submit
                 </Button>
-                </Form.Row>
-            </Form>
-
+                            </Form.Row>
+                        </Form>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

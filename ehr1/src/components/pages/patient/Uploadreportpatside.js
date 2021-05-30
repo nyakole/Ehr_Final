@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import moment from "moment";
+import './Style.css';
 
 
 function Uploadreportpatside() {
@@ -44,33 +45,55 @@ function Uploadreportpatside() {
 
 
     return (
-        <div>
-            <Button variant="danger" onClick={Logoutpatient}>Logout</Button>
+        <div className="back">
+            <Button variant="danger" style={{ float: "right", margin: '10px', marginRight: "80px" }} onClick={Logoutpatient}>Logout</Button>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <div className="col-sm">
 
-            <Form onSubmit={handleSubmit} >
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formGridName">
-                        <Form.Label>Description</Form.Label>
-                        <Form.Control type="text" placeholder="Enter description"
-                            autoFocus
-                            required
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                        />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.File id="exampleFormControlFile1" label="Example file input" accept="image/*,application/pdf"
-                            autoFocus
-                            required
-                            onChange={onchange}
-                        />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
+                <center><h2>Upload Medical Reports</h2></center>
+                <br></br>
+
+
+                <br></br>
+                <div className="center" >
+                    <div className="form4" >
+                        <Form onSubmit={handleSubmit} >
+                            <Form.Row>
+                                <Form.Group as={Col} controlId="formGridName">
+                                    <Form.Label>Upload the medical report</Form.Label>
+                                    <Form.Control type="text" placeholder="Enter description"
+                                        autoFocus
+                                        required
+                                        value={description}
+                                        onChange={(e) => setDescription(e.target.value)}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <br></br>
+
+                                    <Form.File id="exampleFormControlFile1" contrilId="fileupload" accept="image/*,application/pdf"
+                                        autoFocus
+                                        required
+                                        onChange={onchange}
+                                    />
+                                </Form.Group>
+                                <br></br>
+                                <Button variant="primary" type="submit">
+                                    Submit
                 </Button>
-                </Form.Row>
-            </Form>
-
+                            </Form.Row>
+                        </Form>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

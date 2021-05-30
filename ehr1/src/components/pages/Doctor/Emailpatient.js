@@ -9,6 +9,7 @@ export default function Emailve() {
   const history = useHistory();
   const [errors, setErrors] = useState({});
   const [show, setShow] = useState(false);
+  const [show3, setShow3] = useState(false);
   const [values, setValues] = useState({
     email: '',
   })
@@ -45,14 +46,18 @@ export default function Emailve() {
                   history.push('/verifyotp')
                 }
               })
-              .catch((error) => alert(error))
+              .catch((error) => {
+                setShow3(true)
+              })
           }
           else if (userresponse.data.Success) {
             console.log("Success")
             setShow(true)
           }
         })
-        .catch((error) => alert(error))
+        .catch((error) => {
+          setShow3(true)
+        })
     }
   }
   const validate = async (values) => {
@@ -75,14 +80,40 @@ export default function Emailve() {
   }
 
   return (
-    <div className="Login">
-      <Button variant="danger" onClick={LogoutDoctor}>LogoutDoctor</Button>
-
-      <Form onSubmit={handleSubmit}>
-        {show ? (<Alert show={show} variant="danger" >
+    <div className="col-sm back">
+       {show ? (<Alert show={show} variant="danger" >
           <Alert.Heading>Patient is not  exits in database check the email</Alert.Heading></Alert>) : null}
+          {show3 ? (<Alert show={show3} variant="danger" >
+        <Alert.Heading>Network Error</Alert.Heading></Alert>) : null}
+      <Button variant="danger" className="LogoutDoctor" onClick={LogoutDoctor}>LogoutDoctor</Button>
+      
+     
+           
+         
+      <div className="center" >     
+      
+    
+     
+      <Form onSubmit={handleSubmit}>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h2 className="center"    ><b>Enter Email of the patient</b></h2>
+      <br></br>
+      <br></br>
+     
+      <div className="form" > 
         <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>Enter Email of the patient</Form.Label>
           <Form.Control
             autoFocus
             required
@@ -94,12 +125,16 @@ export default function Emailve() {
           />
           <Form.Control.Feedback type='invalid'>{errors.email}</Form.Control.Feedback>
         </Form.Group>
-
+        <br></br>
         <Button block size="lg" type="submit" >
-          send Otp
+          Send OTP
         </Button>
-
+        </div>
+        
       </Form>
+      </div>
+      
+     
     </div>
   );
 }

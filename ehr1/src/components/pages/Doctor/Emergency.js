@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { validationSchema ,validationSchema1} from '../../../validation/validationSchemsforemgencyperson';
 import moment from "moment";
+import './Style.css';
 
 function Resgisterdoctor() {
     const history = useHistory();
@@ -21,6 +22,8 @@ function Resgisterdoctor() {
     });
     const [errors, setErrors] = useState({});
     const [errors1, setErrors1] = useState({});
+    const [show3, setShow3] = useState(false);
+    const [show, setShow] = useState(false);
 
     const handleChange = e => {
         const { name, value } = e.currentTarget
@@ -64,6 +67,7 @@ function Resgisterdoctor() {
                     console.log(response)
                     let userresponse = response;
                     console.log(userresponse.data);
+
                     if (userresponse.data === true) {
                         console.log("Done for")
                         axios.post('http://localhost:8080/otpverification/send', values)
@@ -78,13 +82,17 @@ function Resgisterdoctor() {
                             history.push('/emergencyotp')
                           }
                         })
-                        .catch((error) => alert(error))
+                        .catch((error) => {
+                            setShow3(true)
+                          })
                     }
                     else {
-                        <Alert variant="danger">{userresponse.data}</Alert>
+                       setShow(true)
                     }
                 })
-                .catch((error) => alert(error))
+                .catch((error) => {
+                    setShow3(true)
+                  })
         }
     }
 
@@ -115,7 +123,17 @@ function Resgisterdoctor() {
 
 
     return (
-        <div>
+        <div className="col-sm back">
+              {show ? (<Alert show={show} variant="danger" >
+          <Alert.Heading>Check Mobile No. and Adhar No. of Patient</Alert.Heading></Alert>) : null}
+             {show3 ? (<Alert show={show3} variant="danger" >
+        <Alert.Heading>Network Error</Alert.Heading></Alert>) : null}
+            <br></br>
+            <center><h2>Consent Form for Emergency care</h2></center>
+            <br></br>
+            <br></br>
+            <div className="center">
+            <div className="form6" >
             <Form onSubmit={handleSubmit}>
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
@@ -206,15 +224,18 @@ function Resgisterdoctor() {
                 <Form.Group>
                     <Form.Check
                         required
-                        label="Agree to terms and conditions"
+                        label="By ticking, you're agreeing to our terms of service "
                         feedback="You must agree before submitting."
                     />
                 </Form.Group>
-
+                <br></br>
+                
                 <Button variant="primary" type="submit">
                     Submit
   </Button>
             </Form>
+            </div>
+            </div>
         </div>
     )
 }

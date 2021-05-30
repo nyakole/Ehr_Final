@@ -20,8 +20,8 @@ import Home from './components/home/Home';
 import Emailreg from './components/pages/patient/Emailreg';
 import Verifyotp1 from './components/pages/patient/Verifyotp1';
 import Normaloremg from './components/pages/Doctor/Normaloremg';
-import Emergency from './components/pages/Doctor/Emergency'
-import Emergencyotp from './components/pages/Doctor/Emergencyotp'
+import Emergency from './components/pages/Doctor/Emergency';
+import Emergencyotp from './components/pages/Doctor/Emergencyotp';
 class  App extends Component {
   render(){
     return (

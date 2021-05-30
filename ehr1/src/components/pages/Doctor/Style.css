@@ -1,0 +1,136 @@
+.form {
+    background: #34ffe4;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.form1 {
+    background: #89cc52;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.form2 {
+    background: #cc6723;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.form3 {
+    background: #e08fe0;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.form4 {
+    background: #6bcce4;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.form5 {
+  background: #b48eb1;
+  padding: 1.5em;
+  border-radius: 1em;
+}
+.form6 {
+  background:#ffcccb;
+  padding: 1.5em;
+  border-radius: 1em;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eye{
+  float: right;
+  margin-left: -25px;
+  margin-top: -30px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+  
+}
+
+
+.LogoutDoctor {
+  float :right;
+  margin : 15px;
+  margin-right: 40px;
+}
+.error-message {
+    margin-top: 1em;
+    color: red;
+}
+
+.back{
+    background-image: url("../../home/ba.jpg");
+    background-blend-mode: darken;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-image: url("../../home/ba.jpg");
+  }
+  .back1{
+    background-color: rgb(255, 255, 255);
+    background-blend-mode: darken;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-image: url("../../home/ba.jpg");
+  }
+
+  .container {
+    padding: 64px;
+  }
+  
+  /* Clear floats */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both
+  }
+  
+  /* 2/3 column */
+  .column-66 {
+    float: left;
+    width: 66.66666%;
+    padding: 20px;
+  }
+  
+  /* 1/3 column */
+  .column-33 {
+    float: left;
+    width: 33.33333%;
+    padding: 20px;
+  }
+  
+  .H3 {
+    color: red;
+     
+}
+
+  .column-50 {
+    float: left;
+    width: 50%;
+    padding: 20px;
+  }
+  
+  /* Add responsiveness - make the columns appear on top of each other instead of next to each other on small screens */
+  @media screen and (max-width: 1000px) {
+    .column-66,
+    .column-33 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  
+  
