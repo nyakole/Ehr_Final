@@ -85,6 +85,7 @@ export default function Emailve() {
           <Alert.Heading>Patient is not  exits in database check the email</Alert.Heading></Alert>) : null}
           {show3 ? (<Alert show={show3} variant="danger" >
         <Alert.Heading>Network Error</Alert.Heading></Alert>) : null}
+        <br></br>
       <Button variant="danger" className="LogoutDoctor" onClick={LogoutDoctor}>LogoutDoctor</Button>
       
      

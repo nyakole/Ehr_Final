@@ -129,6 +129,9 @@ function Resgisterdoctor() {
              {show3 ? (<Alert show={show3} variant="danger" >
         <Alert.Heading>Network Error</Alert.Heading></Alert>) : null}
             <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <center><h2>Consent Form for Emergency care</h2></center>
             <br></br>
             <br></br>

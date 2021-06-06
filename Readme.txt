@@ -13,7 +13,13 @@ curl -sSL https://bit.ly/2ysbOFE​ | bash -s
 cd fabric-samples/test-network
 ./network.sh down
 ./network.sh up createChannel -ca -s couchdb
+./network.sh deployCC -ccn fabcar -ccp ../../Ehr_Final/chaincode-javascript/ -ccl javascript
+
+
+
 ./network.sh deployCC -ccn fabcar -ccp ../../../Ehr_Final/chaincode-javascript/ -ccl javascript
+
+
 
 npm install
 npm start

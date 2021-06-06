@@ -110,7 +110,7 @@ emergency.post('/verify', async (req, res) => {
 
         " <tr style=' background-color: #dddddd'>" +
         "<td  style='border: 1px solid red;text-align: left;padding: 8px;'>" + "Doctor Name" + "</td>" +
-        "<td  style='border: 1px solid red;text-align: left;padding: 8px;'>" + req.body.doctor.name + "</td>" + "</tr>" +
+        "<td  style='border: 1px solid red;text-align: left;padding: 8px;'>" +"Dr"+ req.body.doctor.name + "</td>" + "</tr>" +
 
         " <tr style=' background-color: #dddddd'>" +
         "<td  style='border: 1px solid red;text-align: left;padding: 8px;'>" + "Hospital Name" + "</td>" +

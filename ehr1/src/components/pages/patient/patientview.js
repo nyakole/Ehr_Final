@@ -31,6 +31,7 @@ export default function Dashbord() {
   }
   return (
     <div className="dashbord back">
+       <br></br>
       <Button variant="danger" style={{ float: "right", margin: '10px', marginRight: "80px" }} onClick={Logoutpatient}>Logout</Button>
       <h3 className="H3" >Patient Name : {patientdata1.name}</h3>
       <br></br>

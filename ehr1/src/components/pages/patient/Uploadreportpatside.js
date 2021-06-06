@@ -46,6 +46,7 @@ function Uploadreportpatside() {
 
     return (
         <div className="back">
+            <br></br>
             <Button variant="danger" style={{ float: "right", margin: '10px', marginRight: "80px" }} onClick={Logoutpatient}>Logout</Button>
             <br></br>
             <br></br>

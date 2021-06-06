@@ -31,6 +31,7 @@ export default function Logindoctor() {
   return (
     <div className="back">
       <div className="col-sm">
+      <br></br>
       <Button variant="danger" style={{ float: "right", margin: '10px', marginRight: "30px" }} onClick={LogoutDoctor}>Logout Doctor</Button>
         <div className="center back">
 

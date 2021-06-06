@@ -53,6 +53,7 @@ function Uploadreportdrside() {
     return (
         <div className="back">
             <div className="col-sm">
+            <br></br>
                 <Button variant="danger" style={{ float: "right", margin: '10px', marginRight: "30px" }} onClick={LogoutDoctor}>Logout Doctor</Button>
                 <Button variant="danger" style={{ float: "right", margin: '10px' }} onClick={Logoutpatient}>Logout Patient </Button>
                 <br></br>
